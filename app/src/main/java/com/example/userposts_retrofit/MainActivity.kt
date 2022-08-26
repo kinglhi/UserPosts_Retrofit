@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setupRecyclerView()
 
+        //  what happens after the application launches.
         lifecycleScope.launchWhenCreated {
             binding.progressbar.isVisible = true
             val response = try {
