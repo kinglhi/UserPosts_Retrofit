@@ -32,11 +32,13 @@ class MainActivity : AppCompatActivity() {
                 RetrofitInstance.api.getPosts()
             } catch(e: IOException) {
                 binding.progressbar.isVisible = false
-                Log.d(TAG, "IOException, check your internet connection & try again.")
+//                Log.d(TAG, "IOException, check your internet connection & try again.")
+                binding.tvError.text = "IOException, check your internet connection & try again."
                 return@launchWhenCreated
             } catch(e: HttpException) {
                 binding.progressbar.isVisible = false
-                Log.d(TAG, "Http Exception, unexpected response.")
+//                Log.d(TAG, "Http Exception, unexpected response.")
+                binding.tvError.text = "Http Exception, unexpected response."
                 return@launchWhenCreated
             }
 
